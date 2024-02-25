@@ -37,15 +37,6 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
-    public List<User> getAllSellers(boolean typeofaccount){
-        return repo.findAllSellers(typeofaccount);
-    }
-    @Override
-    public List<User> getAllBuyers(boolean typeofaccount){
-        return null;
-    }
-
-    @Override
     public List<User> getByTicket(Ticket ticket) {
         return null;
     }

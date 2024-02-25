@@ -13,8 +13,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String login;
-    private boolean typeofaccount;
+
     public String ToString(){
-        return "id:" + id + "\nUsername: " + login + "\ntype of account: " + (typeofaccount? "Prodavets" : "Pokupatel");
+        return "id:" + id + "\nUsername: " + login;
     }
 }

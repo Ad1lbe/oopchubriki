@@ -55,12 +55,4 @@ public class UserController {
         return new ResponseEntity<>(createduser, HttpStatus.CREATED);
     }
 
-    @GetMapping("/sellers")
-    public ResponseEntity<List<User>> getAllSellers(boolean typeofaccount) {
-
-        List<User> users = service.getAllSellers(typeofaccount);
-        if (users == null)
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        return new ResponseEntity<>(users, HttpStatus.OK);
-    }
 }
