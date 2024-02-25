@@ -28,11 +28,20 @@ public class UserService implements UserServiceInterface {
 
     @Override
     public User create(User user) {
-        return null;
+        return repo.save(user);
     }
 
     @Override
     public User getByLogin(String login) {
+        return repo.findByLogin(login);
+    }
+
+    @Override
+    public List<User> getAllSellers(boolean typeofaccount){
+        return repo.findAllSellers(typeofaccount);
+    }
+    @Override
+    public List<User> getAllBuyers(boolean typeofaccount){
         return null;
     }
 

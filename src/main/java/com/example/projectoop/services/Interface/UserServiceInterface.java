@@ -13,4 +13,8 @@ public interface UserServiceInterface {
     User getByLogin(String login);
 
     List<User> getByTicket(Ticket ticket);
+
+    List<User> getAllSellers(boolean typeofaccount);
+
+    List<User> getAllBuyers(boolean typeofaccount);
 }
