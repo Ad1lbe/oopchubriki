@@ -1,21 +1,16 @@
 package com.example.projectoop.services.Interface;
+import com.example.projectoop.models.Ticket;
 import com.example.projectoop.models.User;
 import java.util.List;
 
-public class UserServiceInterface {
-    List<User> getAll() {
-        return null;
-    }
+public interface UserServiceInterface {
+    List<User> getAll();
 
-    List<User> getById(int id) {
-        return null;
-    }
+    User getById(int id);
 
-    User create(User user) {
-        return null;
-    }
+    User create(User user);
 
-    List<User> getByLogin(String login) {
-        return null;
-    }
+    User getByLogin(String login);
+
+    List<User> getByTicket(Ticket ticket);
 }
