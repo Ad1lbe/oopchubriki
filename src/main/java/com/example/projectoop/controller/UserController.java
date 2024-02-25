@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("users")
 
@@ -39,5 +40,27 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
         return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    @GetMapping("/logins/{user_login}")
+    public User getByLogin(@PathVariable("user_login") String login){
+        return service.getByLogin(login);
+    }
+
+    @PostMapping("/createuser")
+    public ResponseEntity<User> create(@RequestBody User user){
+        User createduser = service.create(user);
+        if(createduser == null)
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(createduser, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/sellers")
+    public ResponseEntity<List<User>> getAllSellers(boolean typeofaccount) {
+
+        List<User> users = service.getAllSellers(typeofaccount);
+        if (users == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(users, HttpStatus.OK);
     }
 }
