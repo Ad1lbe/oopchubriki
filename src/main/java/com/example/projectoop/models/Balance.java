@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Table(name="balance")
 @Data
 @NoArgsConstructor
-AllArgsConstructor
+@AllArgsConstructor
 public class Balance {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
