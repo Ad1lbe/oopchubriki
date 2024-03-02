@@ -16,6 +16,17 @@ public TransactionService(TransactionRepository transactionRepository){
 public void addTransaction(Transaction transaction){
     transactionRepository.save(transaction);
 }
+    public void deleteTransaction(Long id){
+        Optional<Transaction> transactionOptional=   transactionRepository.findById(id);
+        if (transactionOptional.isPresent()){
+            transactionRepository.delete(transactionOptional.get());
+        }
+        else {
+            throw new IllegalArgumentException("There are no id like that");
+        }
+    }
+
+
 
 
 }
